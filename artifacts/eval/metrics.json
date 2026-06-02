@@ -1,5 +1,6 @@
 {
   "n_test": 11368,
+  "diagnostic_prediction_source": "V11 direct/two-stage blend (w=0.65)",
   "comparison": [
     {
       "variant": "V0 global_mean",
@@ -79,91 +80,228 @@
       "kind": "xgb"
     }
   ],
+  "extensions": [
+    {
+      "variant": "V12 hurdle + temperature CDF (a=-0.03, b=1.01)",
+      "mae": 4.416235397749596,
+      "rmse": 5.763127574187723,
+      "crps": 3.062066413735187,
+      "kind": "extension"
+    },
+    {
+      "variant": "V11 direct/two-stage blend (w=0.65)",
+      "mae": 4.368080753492671,
+      "rmse": 5.753202204073063,
+      "crps": 3.063932628225809,
+      "kind": "extension"
+    },
+    {
+      "variant": "V3 baseline LightGBM Tweedie + NB",
+      "mae": 4.379976387914231,
+      "rmse": 5.759595245620653,
+      "crps": 3.06788986496247,
+      "kind": "baseline"
+    },
+    {
+      "variant": "V13 second LightGBM variance + validation scale 3.00",
+      "mae": 4.379976387914231,
+      "rmse": 5.759595245620653,
+      "crps": 3.11536370918606,
+      "kind": "extension"
+    }
+  ],
+  "comparison_with_extensions": [
+    {
+      "variant": "V12 hurdle + temperature CDF (a=-0.03, b=1.01)",
+      "mae": 4.416235397749596,
+      "rmse": 5.763127574187723,
+      "crps": 3.062066413735187,
+      "kind": "extension"
+    },
+    {
+      "variant": "V11 direct/two-stage blend (w=0.65)",
+      "mae": 4.368080753492671,
+      "rmse": 5.753202204073063,
+      "crps": 3.063932628225809,
+      "kind": "extension"
+    },
+    {
+      "variant": "V3 LGBM Tweedie (num)",
+      "mae": 4.379976387914231,
+      "rmse": 5.759595245620653,
+      "crps": 3.06788986496247,
+      "kind": "lgb"
+    },
+    {
+      "variant": "V3 baseline LightGBM Tweedie + NB",
+      "mae": 4.379976387914231,
+      "rmse": 5.759595245620653,
+      "crps": 3.06788986496247,
+      "kind": "baseline"
+    },
+    {
+      "variant": "V4 LGBM Poisson (num)",
+      "mae": 4.395553994313409,
+      "rmse": 5.763509777110908,
+      "crps": 3.069664799185899,
+      "kind": "lgb"
+    },
+    {
+      "variant": "V6 LGBM Tweedie (num+cat)",
+      "mae": 4.3845992434959085,
+      "rmse": 5.762168920309614,
+      "crps": 3.069669839005618,
+      "kind": "lgb"
+    },
+    {
+      "variant": "V10 XGBoost Poisson (num)",
+      "mae": 4.412410617870902,
+      "rmse": 5.772848857340624,
+      "crps": 3.0766417230665657,
+      "kind": "xgb"
+    },
+    {
+      "variant": "V5 LGBM RMSE (num)",
+      "mae": 4.419052743348892,
+      "rmse": 5.778893429608602,
+      "crps": 3.082266347228973,
+      "kind": "lgb"
+    },
+    {
+      "variant": "V9 XGBoost Tweedie (num)",
+      "mae": 4.387311331600077,
+      "rmse": 5.802384538566178,
+      "crps": 3.096079595271837,
+      "kind": "xgb"
+    },
+    {
+      "variant": "V7 LGBM Tweedie (+player_id)",
+      "mae": 4.432049787172399,
+      "rmse": 5.808820331458183,
+      "crps": 3.099212667407189,
+      "kind": "lgb"
+    },
+    {
+      "variant": "V8 LGBM Tweedie (Optuna-tuned)",
+      "mae": 4.354823007843399,
+      "rmse": 5.796685324278688,
+      "crps": 3.1080579192771385,
+      "kind": "lgb"
+    },
+    {
+      "variant": "V13 second LightGBM variance + validation scale 3.00",
+      "mae": 4.379976387914231,
+      "rmse": 5.759595245620653,
+      "crps": 3.11536370918606,
+      "kind": "extension"
+    },
+    {
+      "variant": "V1 ewma_ppg",
+      "mae": 4.511171484447243,
+      "rmse": 5.983544332786437,
+      "crps": NaN,
+      "kind": "baseline"
+    },
+    {
+      "variant": "V2 min*ppm",
+      "mae": 4.524790663351615,
+      "rmse": 6.0156042436413575,
+      "crps": NaN,
+      "kind": "baseline"
+    },
+    {
+      "variant": "V0 global_mean",
+      "mae": 6.9741486641052965,
+      "rmse": 8.651202701741232,
+      "crps": NaN,
+      "kind": "baseline"
+    }
+  ],
   "best_by_crps": "V3 LGBM Tweedie (num)",
   "over_under": [
     {
       "line": 4.5,
-      "empirical_rate": 0.6769000703729767,
-      "avg_predicted": 0.6726528170162523,
-      "brier": 0.14227354766908076,
-      "logloss": 0.43623192768141283
+      "empirical_rate": 0.6768121041520057,
+      "avg_predicted": 0.6695865034700613,
+      "brier": 0.141778271873325,
+      "logloss": 0.43490335588135
     },
     {
       "line": 9.5,
-      "empirical_rate": 0.4486277269528501,
-      "avg_predicted": 0.4262780198908527,
-      "brier": 0.1491126183818459,
-      "logloss": 0.45732095882975854
+      "empirical_rate": 0.44853976073187896,
+      "avg_predicted": 0.4225032921316012,
+      "brier": 0.149220641655997,
+      "logloss": 0.4573826892994379
     },
     {
       "line": 14.5,
-      "empirical_rate": 0.26451442646023926,
-      "avg_predicted": 0.25309061726871146,
-      "brier": 0.11635586276849699,
-      "logloss": 0.3676486061184804
+      "empirical_rate": 0.26442646023926814,
+      "avg_predicted": 0.2500333726500173,
+      "brier": 0.11636383996084013,
+      "logloss": 0.36776778524660614
     },
     {
       "line": 19.5,
-      "empirical_rate": 0.1447923997185081,
-      "avg_predicted": 0.13994893669081868,
-      "brier": 0.07899389921634824,
-      "logloss": 0.2574341667862188
+      "empirical_rate": 0.14470443349753695,
+      "avg_predicted": 0.13795295171690528,
+      "brier": 0.07886093204303957,
+      "logloss": 0.2572806685230345
     },
     {
       "line": 24.5,
       "empirical_rate": 0.07239619985925405,
-      "avg_predicted": 0.07078568412495453,
-      "brier": 0.04831721424524763,
-      "logloss": 0.1609355569845317
+      "avg_predicted": 0.06975675221057075,
+      "brier": 0.04822173625175498,
+      "logloss": 0.160872829407318
     },
     {
       "line": 29.5,
       "empirical_rate": 0.03219563687543983,
-      "avg_predicted": 0.03247602725814242,
-      "brier": 0.025767616076573716,
-      "logloss": 0.09110402322923411
+      "avg_predicted": 0.03207814346498923,
+      "brier": 0.025759436279724466,
+      "logloss": 0.09095731977028068
     }
   ],
   "segments": [
     {
       "bucket": "<=5",
-      "n": 3006,
-      "mae": 2.833315036210442,
-      "rmse": 3.72145411787936,
-      "emp_mean": 3.2548236859614104,
-      "pred_mean": 3.2398642910378257
+      "n": 3024,
+      "mae": 2.812859331972609,
+      "rmse": 3.6988782018315867,
+      "emp_mean": 3.246693121693122,
+      "pred_mean": 3.2312632272635615
     },
     {
       "bucket": "5 to 10",
-      "n": 3709,
-      "mae": 4.199360505497977,
-      "rmse": 5.339397082848017,
-      "emp_mean": 7.635750876246967,
-      "pred_mean": 7.3653747154237115
+      "n": 3752,
+      "mae": 4.20530786072924,
+      "rmse": 5.34564358986949,
+      "emp_mean": 7.68363539445629,
+      "pred_mean": 7.338726751275199
     },
     {
       "bucket": "10 to 15",
-      "n": 2302,
-      "mae": 4.943443185851393,
-      "rmse": 6.230192889193449,
-      "emp_mean": 12.326238053866204,
-      "pred_mean": 12.254964945043824
+      "n": 2236,
+      "mae": 4.954349161232041,
+      "rmse": 6.252399113251245,
+      "emp_mean": 12.395348837209303,
+      "pred_mean": 12.214105435312089
     },
     {
       "bucket": "15 to 20",
-      "n": 1272,
-      "mae": 5.668658184178109,
-      "rmse": 7.169010865194381,
-      "emp_mean": 17.42610062893082,
-      "pred_mean": 17.424537280449485
+      "n": 1285,
+      "mae": 5.6604439237524575,
+      "rmse": 7.182953448462557,
+      "emp_mean": 17.45214007782101,
+      "pred_mean": 17.347331136622767
     },
     {
       "bucket": ">20",
-      "n": 1079,
-      "mae": 6.588344369097813,
-      "rmse": 8.337798124325573,
-      "emp_mean": 23.912882298424467,
-      "pred_mean": 23.411277007732355
+      "n": 1071,
+      "mae": 6.5549440950762445,
+      "rmse": 8.31077211139006,
+      "emp_mean": 23.942110177404295,
+      "pred_mean": 23.36449059745611
     }
   ]
 }

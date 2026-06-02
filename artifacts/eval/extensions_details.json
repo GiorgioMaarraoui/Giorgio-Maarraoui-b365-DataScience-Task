@@ -1,0 +1,29 @@
+{
+  "V3_baseline": {
+    "distribution": "Negative Binomial with validation-binned alpha"
+  },
+  "V11": {
+    "blend_weight_direct": 0.65,
+    "blend_weight_two_stage": 0.35,
+    "selection_metric": "validation MAE",
+    "direct_loss": "LightGBM Tweedie; early stopping on validation RMSE",
+    "minutes_loss": "LightGBM regression/RMSE",
+    "points_per_minute_loss": "LightGBM regression/RMSE on clipped points/minute",
+    "distribution": "Negative Binomial with validation-binned alpha"
+  },
+  "V12": {
+    "gate_loss": "LightGBM binary log-loss for P(points > 0)",
+    "positive_mean_loss": "LightGBM Tweedie on validation-positive points",
+    "positive_distribution": "Positive-truncated Negative Binomial",
+    "temperature_loss": "validation CDF binary log-loss over thresholds 0..80",
+    "temperature_intercept": -0.031876435533049544,
+    "temperature_slope": 1.0097412636715866
+  },
+  "V13": {
+    "mean_loss": "LightGBM Tweedie; early stopping on validation RMSE",
+    "variance_loss": "LightGBM regression/RMSE on log1p(out-of-fold squared residual)",
+    "variance_floor": "var >= mu + 1e-3",
+    "best_validation_scale": 3.0,
+    "distribution": "Negative Binomial from predicted mean and predicted variance"
+  }
+}

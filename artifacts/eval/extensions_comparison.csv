@@ -1,0 +1,5 @@
+variant,mae,rmse,crps,kind
+"V12 hurdle + temperature CDF (a=-0.03, b=1.01)",4.416235397749596,5.763127574187723,3.062066413735187,extension
+V11 direct/two-stage blend (w=0.65),4.368080753492671,5.753202204073063,3.063932628225809,extension
+V3 baseline LightGBM Tweedie + NB,4.379976387914231,5.759595245620653,3.06788986496247,baseline
+V13 second LightGBM variance + validation scale 3.00,4.379976387914231,5.759595245620653,3.11536370918606,extension
